@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Car Racing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="road">
+            <div class="player-car"></div>
+            <div class="score">Score: 0</div>
+            <div class="high-score">High Score: 0</div>
+            <div class="countdown"></div>
+            <div class="game-over">
+                <h2>GAME OVER</h2>
+                <p>Final Score: <span class="final-score">0</span></p>
+                <p>Press <span class="restart-key">R</span> to restart</p>
+            </div>
+        </div>
+    </div>
+    <div class="instructions">
+        <p>Use <strong>LEFT</strong> and <strong>RIGHT</strong> arrow keys to move</p>
+        <p>Avoid the obstacles and beat your high score!</p>
+    </div>
+    
+    <!-- Audio elements -->
+    <audio id="engineSound" loop>
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-car-engine-idle-1700.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="crashSound">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-car-crash-with-explosion-1617.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="countdownSound">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-racing-countdown-timer-1050.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="goSound">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-sports-car-fast-engine-1710.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>
