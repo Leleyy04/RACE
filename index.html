@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Car Racing Game</title>
+    <title>Car Racing Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="game-container">
         <div class="road">
-            <div class="player-car"></div>
+            <div class="player-car">
+                <div class="car-body"></div>
+                <div class="car-top"></div>
+                <div class="car-window"></div>
+                <div class="car-light left"></div>
+                <div class="car-light right"></div>
+                <div class="car-wheel front-left"></div>
+                <div class="car-wheel front-right"></div>
+                <div class="car-wheel rear-left"></div>
+                <div class="car-wheel rear-right"></div>
+            </div>
             <div class="score">Score: 0</div>
             <div class="high-score">High Score: 0</div>
             <div class="countdown"></div>
@@ -20,9 +30,10 @@
             </div>
         </div>
     </div>
-    <div class="instructions">
-        <p>Use <strong>LEFT</strong> and <strong>RIGHT</strong> arrow keys to move on sa ex</p>
-        <p>Avoid the obstacles and beat your high score!</p>
+    
+    <div class="controls">
+        <div class="control-btn" id="left-btn">←</div>
+        <div class="control-btn" id="right-btn">→</div>
     </div>
     
     <!-- Audio elements -->
