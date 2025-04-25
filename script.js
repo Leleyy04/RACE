@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             rightPressed = true;
             playerCar.classList.add('move-right');
             playerCar.classList.remove('move-left');
-        } else if (diff < -10) { // Swipe left
+        } else if (diff < -15) { // Swipe left
             rightPressed = false;
             leftPressed = true;
             playerCar.classList.add('move-left');
@@ -147,8 +147,8 @@ document.addEventListener('DOMContentLoaded', () => {
         isGameOver = false;
         score = 0;
         gameSpeed = 1.2;
-        playerX = 130;
-        obstacles = [pakyu];
+        playerX = 100;
+        obstacles = [];
         
         scoreElement.textContent = `Score: ${score}`;
         engineSound.volume = 0.3;
@@ -172,10 +172,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Update player position based on controls
     function updatePlayerPosition() {
-        if (leftPressed && playerX > 20) {
+        if (leftPressed && playerX > 10) {
             playerX -= 5;
         }
-        if (rightPressed && playerX < roadWidth - playerWidth - 20) {
+        if (rightPressed && playerX < roadWidth - playerWidth - 10) {
             playerX += 5;
         }
         
