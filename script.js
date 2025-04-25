@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Game variables
     let score = 0;
     let highScore = localStorage.getItem('highScore') || 0;
-    let gameSpeed = 20;
+    let gameSpeed = -5;
     let isGameOver = false;
     let isGameStarted = false;
     let animationId;
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             rightPressed = true;
             playerCar.classList.add('move-right');
             playerCar.classList.remove('move-left');
-        } else if (diff < -15) { // Swipe left
+        } else if (diff < -10) { // Swipe left
             rightPressed = false;
             leftPressed = true;
             playerCar.classList.add('move-left');
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
         score = 0;
         gameSpeed = 1.2;
         playerX = 130;
-        obstacles = [];
+        obstacles = [pakyu];
         
         scoreElement.textContent = `Score: ${score}`;
         engineSound.volume = 0.3;
@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 element: obstacle,
                 x: obstacleX,
                 y: -50,
-                width: 50,
+                width: 10,
                 height: 50
             });
         }
@@ -214,14 +214,14 @@ document.addEventListener('DOMContentLoaded', () => {
             obstacle.y += gameSpeed;
             obstacle.element.style.top = obstacle.y + 'px';
             
-            if (obstacle.y > 500) {
+            if (obstacle.y > 200) {
                 road.removeChild(obstacle.element);
                 obstacles.splice(i, 1);
                 score++;
                 scoreElement.textContent = `Score: ${score}`;
                 
-                if (score % 5 === 0) {
-                    gameSpeed += 0.2;
+                if (score % 10 === 0) {
+                    gameSpeed += 0.1;
                     engineSound.playbackRate = 1 + (gameSpeed - 2) * 0.1;
                 }
             }
@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function checkCollisions() {
         const playerRect = {
             x: playerX,
-            y: 410,
+            y: 310,
             width: playerWidth,
             height: 70
         };
