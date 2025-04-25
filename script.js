@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Game variables
     let score = 0;
     let highScore = localStorage.getItem('highScore') || 0;
-    let gameSpeed = 2;
+    let gameSpeed = 20;
     let isGameOver = false;
     let isGameStarted = false;
     let animationId;
