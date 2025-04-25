@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Player car position
     let playerX = 130;
-    const playerWidth = 40;
-    const roadWidth = 300;
+    const playerWidth = 30;
+    const roadWidth = 400;
     
     // Control variables
     let leftPressed = false;
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
         countdownElement.style.display = 'block';
         countdownSound.play();
         
-        const countdownSequence = ['3', '2', '1', 'GO!'];
+        const countdownSequence = ['3', '2', '1', 'Asim law!'];
         let count = 0;
         
         const countdownInterval = setInterval(() => {
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
         isGameStarted = true;
         isGameOver = false;
         score = 0;
-        gameSpeed = 2;
+        gameSpeed = 1.2;
         playerX = 130;
         obstacles = [];
         
